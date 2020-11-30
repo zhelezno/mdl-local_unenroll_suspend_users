@@ -9,8 +9,7 @@ defined('MOODLE_INTERNAL') || die();
 class unenroll_suspend_users extends \core\task\scheduled_task{
     
     public function get_name() {
-        //return get_string('unenrollsuspendusers', 'local_unenroll_suspend_users');
-        return get_string('Отчисление заблокированных пользователей с курсов', 'local_unenroll_suspend_users');
+        return get_string('unenrollsuspendusers', 'local_unenroll_suspend_users');        
     }
    
     public function execute() {
