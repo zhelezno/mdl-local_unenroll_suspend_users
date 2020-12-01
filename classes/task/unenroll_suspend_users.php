@@ -20,7 +20,11 @@ class unenroll_suspend_users extends \core\task\scheduled_task{
         $sql = "DELETE user_enrolments 
                 FROM {user_enrolments} user_enrolments
                 INNER JOIN {user} u ON (u.id = user_enrolments.userid)
-                WHERE u.suspended = 1";
+                INNER JOIN {enrol} enrol ON (enrol.id = user_enrolments.enrolid)
+                INNER JOIN {course} course ON (course.id = enrol.courseid)
+                INNER JOIN {course_categories} course_categories ON (course_categories.id = course.category)
+                WHERE u.suspended = 1
+                AND course_categories.parent = 30";
         
         $DB->execute($sql);
         //mtrace("My task finished"); 

@@ -25,5 +25,5 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_unenroll_suspend_users';
-$plugin->version   = 2020112200;
+$plugin->version   = 2020112300;
 $plugin->requires  = 2014051200;
